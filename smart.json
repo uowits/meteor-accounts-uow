@@ -2,8 +2,8 @@
   "name": "accounts-uow",
   "description": "Login service for UOW accounts",
   "homepage": "http://api.uow.edu.au",
-  "author": "Sam Dunster <sdunster@uow.edu.au> (http://uow.edu.au/~sdunster/)",
+  "author": "Sam Dunster",
   "version": "0.1.0",
-  "git": "",
+  "git": "https://github.com/yefim/meteor-accounts-linkedin.git",
   "packages": {}
 }
