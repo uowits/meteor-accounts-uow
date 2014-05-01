@@ -4,6 +4,6 @@
   "homepage": "http://api.uow.edu.au",
   "author": "Sam Dunster",
   "version": "0.1.0",
-  "git": "https://github.com/yefim/meteor-accounts-linkedin.git",
+  "git": "https://github.com/uowits/meteor-accounts-uow.git",
   "packages": {}
 }
