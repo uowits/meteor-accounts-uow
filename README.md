@@ -17,3 +17,6 @@ mrt install accounts-uow
 
 ```mrt``` is a Meteorite command line tool. Visit [Meteorite's page](http://oortcloud.github.com/meteorite/) to learn more.
 
+Contributors
+------------
+* @sdunster
