@@ -25,7 +25,7 @@ var requestCredential = function (options, credentialRequestCompleteCallback) {
   OAuth.showPopup(
     loginUrl,
     _.bind(credentialRequestCompleteCallback, null, credentialToken),
-    {width: 330, height: 250}
+    {width: 400, height: 300}
   );
 };
 

@@ -8,7 +8,6 @@ Accounts.addAutopublishFields({
 });
 
 OAuth.registerService('uow', 2, null, function(query) {
-
   var accessToken = getAccessToken(query);
   var identity = getIdentity(accessToken);
 
@@ -23,7 +22,6 @@ OAuth.registerService('uow', 2, null, function(query) {
   };
 });
 
-// http://developer.github.com/v3/#user-agent-required
 var userAgent = "Meteor";
 if (Meteor.release)
   userAgent += "/" + Meteor.release;
@@ -51,11 +49,11 @@ var getAccessToken = function (query) {
         }
       });
   } catch (err) {
-    throw _.extend(new Error("Failed to complete OAuth handshake with Github. " + err.message),
+    throw _.extend(new Error("Failed to complete OAuth handshake with UOW API. " + err.message),
                    {response: err.response});
   }
   if (response.data.error) { // if the http response was a json object with an error attribute
-    throw new Error("Failed to complete OAuth handshake with GitHub. " + response.data.error);
+    throw new Error("Failed to complete OAuth handshake with UOW API. " + response.data.error);
   } else {
     return response.data.access_token;
   }
@@ -66,11 +64,10 @@ var getIdentity = function (accessToken) {
     return HTTP.get(
       "https://api.uow.edu.au/user/", {
         headers: {"User-Agent": userAgent,
-          "Authorization": "Bearer "+accessToken}, // http://developer.github.com/v3/#user-agent-required
-        //params: {access_token: accessToken}
+          "Authorization": "Bearer "+accessToken},
       }).data;
   } catch (err) {
-    throw _.extend(new Error("Failed to fetch identity from Github. " + err.message),
+    throw _.extend(new Error("Failed to fetch identity from UOW API. " + err.message),
                    {response: err.response});
   }
 };
